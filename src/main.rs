@@ -138,7 +138,7 @@ fn main() {
 		None => search_term_raw.into()
 	};
 
-	println!("Searching on {} for \"{}\"", search_source_canon, search_term_raw);
+	eprintln!("Searching on {} for \"{}\"", search_source_canon, search_term_raw);
 
 	let start_time = Instant::now();
 	let req_url = if technique.req_method == reqwest::Method::GET {
@@ -156,11 +156,10 @@ fn main() {
 	match resp {
 		Ok(resp) => if resp.status().is_success() {
 			match (technique.text_process)(resp) {
-				Ok(t) => println!(
-					"({} seconds)\n{}",
-					(Instant::now() - start_time).as_millis() as f64 / 1000.,
-					t
-				),
+				Ok(t) => {
+					eprintln!("({} seconds)", (Instant::now() - start_time).as_millis() as f64 / 1000.);
+					println!("{}", t);
+				},
 				Err(_) => error_exit("Failed to construct results text", 5)
 			}
 		} else {
