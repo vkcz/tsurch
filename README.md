@@ -6,10 +6,10 @@ A Rust CLI tool for searching the web
 Running with a single command-line parameter (one word or a sequence of words surrounded by double quotes) will send semi-terminal-friendly search results
 from DuckDuckGo to standard output. You can use `-s=...` or `--source=...` to select a different search source; currently included are
 
-- `duckduckgo`, aliased as `duck` and `ddg`
-- `startpage`, aliased as `start` and `sp` (**does not work**)
-- `wikipedia`, aliased as `wiki` and `wp`
-- `rustdoc`, aliased as `rdoc` and `rs` (**does not work**)
+- [`duckduckgo`](https://duckduckgo.com/), aliased as `duck` and `ddg`
+- [`startpage`](https://startpage.com/), aliased as `start` and `sp` (**does not work**)
+- [`wikipedia`](https://en.wikipedia.org/), aliased as `wiki` and `wp`
+- [`rustdoc`](https://doc.rust-lang.org/std/), aliased as `rdoc` and `rs` (**does not work**)
 
 ## Running
 
